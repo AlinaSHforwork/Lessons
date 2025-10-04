@@ -8,9 +8,17 @@ console.log("numArr array:",numArr)
 let meineArr = [5, 3, -8, 1, -2]
 console.log("meineArr array:",meineArr)
 
-let i = 1
+let matrixArr = [
+  [1, -2, 3],
+  [-4, 5, 6],
+  [7, 8, -9]
+]
+console.log("matrixArr array:",matrixArr)
 
-function sorting (ARAY){
+
+
+let i = 1
+function sortingArray (ARAY){
   for(let star = 0; star < ARAY.length -1; star++){
   for (let i = star + 1; i < ARAY.length; i++) {
     if (ARAY[star] >= ARAY [i]){
@@ -23,5 +31,41 @@ function sorting (ARAY){
 return ARAY
 }
 
+
+
+function sortingMatrix (matrix){   
+    let ARAY = matrix.flat()
+    let numRows = matrix.length;
+    let numCols = matrix[0].length;
+    
+    for(let star = 0; star < ARAY.length -1; star++){
+  for (let i = star + 1; i < ARAY.length; i++) {
+    if (ARAY[star] >= ARAY [i]){
+      let temp = ARAY[star]
+      ARAY[star] = ARAY[i]
+      ARAY[i] = temp
+    }
+  }
+}
+    let k = 0;
+for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            matrix[i][j] = ARAY[ k++];
+        }
+    }
+    return matrix;
+}
+
+function sorting (list){
+  for (let i = 0; i < list.length; i++) {
+    if (!Array.isArray(list[i])) {
+      return sortingArray(list)
+    }
+  }     
+  return sortingMatrix(list) 
+}
+
+
 console.log("sorted numArr array:",sorting(numArr))
 console.log("sorted meineArr array:",sorting(meineArr))
+console.log("sorted matrixArr array:",sorting(matrixArr))
