@@ -35,8 +35,6 @@ return ARAY
 
 function sortingMatrix (matrix){   
     let ARAY = matrix.flat()
-    let numRows = matrix.length;
-    let numCols = matrix[0].length;
     
     for(let star = 0; star < ARAY.length -1; star++){
   for (let i = star + 1; i < ARAY.length; i++) {
@@ -48,8 +46,8 @@ function sortingMatrix (matrix){
   }
 }
     let k = 0;
-for (let i = 0; i < numRows; i++) {
-        for (let j = 0; j < numCols; j++) {
+for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
             matrix[i][j] = ARAY[ k++];
         }
     }
