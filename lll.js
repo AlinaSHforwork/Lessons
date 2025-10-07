@@ -54,7 +54,7 @@ for (let i = 0; i < matrix.length; i++) {
     return matrix;
 }
 
-function sorting (list){
+function sorting (list = []){
   for (let i = 0; i < list.length; i++) {
     if (!Array.isArray(list[i])) {
       return sortingArray(list)
@@ -67,3 +67,5 @@ function sorting (list){
 console.log("sorted numArr array:",sorting(numArr))
 console.log("sorted meineArr array:",sorting(meineArr))
 console.log("sorted matrixArr array:",sorting(matrixArr))
+
+console.log("sorted undefined array:",sorting())
