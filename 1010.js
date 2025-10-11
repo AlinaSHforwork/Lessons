@@ -22,15 +22,21 @@ function binarySearch(arr, value) {
     // from 0 to midIndex - 1
             endIndex = midIndex - 1
             midIndex = Math.round((startIndex + endIndex) / 2)
+            if (midIndex === startIndex){
+                return null
+            }
         }
 
         if (value > arr[midIndex]){
     // from midIndex + 1 to arr.length
-            startIndex = midIndex + 1
+            startIndex = midIndex   
             midIndex = Math.round((startIndex + endIndex) / 2)
+            if (midIndex === endIndex){
+                return null
+            }
         }
         console.log(midIndex, startIndex, endIndex)
     }
 }
-const a = binarySearch(sortedArr, 9)
+const a = binarySearch(sortedArr, 102)
 console.log(a)
