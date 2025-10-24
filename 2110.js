@@ -48,7 +48,5 @@ function mergeSort (arr){
 
 }
 
-
-   
 const sorted = mergeSort([2, -9, 8, 19, 0, -5, -7, 4, 1])
 console.log(sorted)
