@@ -4,3 +4,4 @@
 <h3>😼 0710.js - sorting by type</h3>
 <h3>😼 1010.js - function that finds a number in a sorted array</h3>
 <h3>😼 1410.js - recursion, fibonacci function </h3>
+<h3>😼 2110.js - slice and merge sorting function </h3>
