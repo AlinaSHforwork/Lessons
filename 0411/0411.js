@@ -8,4 +8,4 @@ const fs = require('node:fs');
 }
 );
 
-  console.log(data.replace(/[,.]/ig, " "));    /*.replaceAll(" ", "\n")*/
+  console.log(data.replaceAll(" ", "(Alina Shvryd >'^'<)"));  
