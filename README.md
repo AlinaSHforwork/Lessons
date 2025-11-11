@@ -9,3 +9,4 @@
 <h3>😼 2810.js - cesar encryption and decryption function with .charCodeAt()</h3>
 <h3>😼 0411/0411.js - reading of file, changing text</h3>
 <h3>😼 0411/0711.js - function for slicing text for pages</h3>
+<h3>😼 1111.js - function that find symbols, their count and sort them</h3>
