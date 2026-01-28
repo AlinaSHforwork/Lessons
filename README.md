@@ -2,3 +2,8 @@
 
 <p>Select the branch with the subject name to view the files.<p>
 <h3> 🫶 1.2 Semester Fundamentals of programming (JS)</h3>
+
+<h2>Files:</h2>
+
+<p>2601.js - async functions</p>
+<p>2801.js - errors</p>
