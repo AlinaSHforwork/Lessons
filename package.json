@@ -1,0 +1,20 @@
+{
+  "name": "lessons",
+  "version": "1.0.0",
+  "description": "<p>Select the branch with the subject name to view the files.<p> <h3> 🫶 1.2 Semester Fundamentals of programming (JS)</h3>",
+  "homepage": "https://github.com/AlinaSHforwork/Lessons#readme",
+  "bugs": {
+    "url": "https://github.com/AlinaSHforwork/Lessons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlinaSHforwork/Lessons.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "0201.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
