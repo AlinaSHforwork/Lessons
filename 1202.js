@@ -31,9 +31,8 @@ readfile.on('data', (chunk) => {
     symbolCount += nonWhitespace.length;
 
     for(const i in chunk){
-        let char = chunk[i]
         if (chunk[i] !== ' ' && chunk[i] !== '\n' && chunk[i] !== '\t') {
-            symbolAlphabet[char] = (symbolAlphabet[char] || 0) + 1;
+            symbolAlphabet[chunk[i]] = (symbolAlphabet[chunk[i]] || 0) + 1;
         }
         /*
         if (chunk[i] !== ' ' && chunk[i] !== '\n' && chunk[i] !== '\t') {
