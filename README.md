@@ -11,3 +11,4 @@
 <p>0201.js - streams </p> 
 <p>(04.01) added files for postgre</p>
 <p>1202.js - stream, counting symbols</p>
+<p>(16.02) added more counts in 1202.js and created count.js for automation</p>

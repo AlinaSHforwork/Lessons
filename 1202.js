@@ -13,10 +13,12 @@ let symbolAlphabet = {};
 let words = []
 let remainder = '';
 let wordsAlphabet = {}
+let sentences = []
+let sentenceRemainder = '';
 
 readfile.on('data', (chunk) => {
     // Symbols
-    let text = remainder + chunk.toString('utf-8');
+    let text = remainder + chunk;
 
     const lastSpace = Math.max(text.lastIndexOf(' '), text.lastIndexOf('\n'), text.lastIndexOf('\t'));
     
@@ -56,7 +58,17 @@ readfile.on('data', (chunk) => {
             j = Number(i) + 1;
         }
     }
-    */    
+    */
+    // sentences
+    let textSen = sentenceRemainder + chunk;
+    let parts = textSen.split(/(?<=[.!?])\s+/);
+
+    sentenceRemainder = parts.pop(); 
+    
+    for (const s of parts) {
+        const trimmed = s.trim();
+        if (trimmed) sentences.push(trimmed);
+    }
 });
 
 readfile.on('end', () => {
@@ -74,11 +86,15 @@ readfile.on('end', () => {
 
     for (const word of words){
         wordsAlphabet[word] = (wordsAlphabet[word] || 0) + 1;
-        
+    }    
+
+    if (sentenceRemainder.trim()) {
+        sentences.push(sentenceRemainder.trim());
     }
     
     console.log(`Total number of symbols: ${symbolCount}`);
     console.log(`Symbol counts:`, symbolAlphabet);
     console.log(`Words:`, words)
     console.log(`Words count:`, wordsAlphabet)
+    console.log(`Sentences:`, sentences)
 });
