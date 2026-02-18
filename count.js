@@ -9,7 +9,7 @@ async function startApp() {
     const countSentences = (await rl.question('Count sentences? (y/n): ')).toLowerCase() === 'y';
 
     console.log('\nPaste your text below');
-    console.log('Press Ctrl+D (ctrl + Z and enter win) when you are finished\n');
+    console.log('Press Ctrl+D\n');
 
     rl.close();
     process.stdin.resume(); 

@@ -93,8 +93,12 @@ readfile.on('end', () => {
     }
     
     console.log(`Total number of symbols: ${symbolCount}`);
-    console.log(`Symbol counts:`, symbolAlphabet);
+    //console.log(`Symbol counts:`, symbolAlphabet);
+    //now sorted
+    console.log(`Symbol counts:`, Object.entries(symbolAlphabet).sort(function(a, b){return a[1] - b[1]}));
     console.log(`Words:`, words)
-    console.log(`Words count:`, wordsAlphabet)
+    //console.log(`Words count:`, wordsAlphabet)
+    //now sorted
+    console.log(`Words count:`, Object.entries(wordsAlphabet).sort(function(a, b){return a[1] - b[1]}))
     console.log(`Sentences:`, sentences)
 });
