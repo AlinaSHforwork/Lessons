@@ -4,8 +4,8 @@
 
 <h2>Subjects list:</h2>
 
-<h3> 🫶 1.1 Semester Fundamentals of programming (JS)</h3>
-<h3> 🫶 1.2 Semester Fundamentals of programming (JS)</h3>
+- <h3>1.1 Semester Fundamentals of programming (JS)</h3>
+- <h3>1.2 Semester Fundamentals of programming (JS)</h3>
 
 <h2>Also I have some more tasks for practice: </h2>
 
