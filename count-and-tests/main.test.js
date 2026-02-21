@@ -56,10 +56,7 @@ describe('App Tests', () => {
     process.stdin.emit('end');
 
     expect(console.log).toHaveBeenCalledWith(
-      expect.stringContaining('Total Symbols (non-whitespace):')
-    );
-    expect(console.log).toHaveBeenCalledWith(
-      expect.stringContaining('28')
+      expect.stringContaining('Total Symbols (non-whitespace): 28')
     );
   });
 
@@ -89,5 +86,33 @@ describe('App Tests', () => {
     process.stdin.emit('end');
 
     expect(console.log).toHaveBeenCalledWith('Total Sentences: 9');
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Sentences:')
+    );
+  });
+
+  test('full smiles test', async () => {
+    const testText = fs.readFileSync('./smiles.txt', 'utf8');
+    mockUserInput(['y', 'y', 'y']);
+
+    await startApp();
+
+    process.stdin.emit('data', Buffer.from(testText));
+    process.stdin.emit('end');
+
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Total Symbols (non-whitespace): 225')
+    );
+
+    expect(console.log).toHaveBeenCalledWith('Total Words: 5');
+    expect(console.log).toHaveBeenCalledWith('Unique Words:', 5);
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Words:')
+    );
+
+    expect(console.log).toHaveBeenCalledWith('Total Sentences: 18');
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Sentences:')
+    );
   });
 });

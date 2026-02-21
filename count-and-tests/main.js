@@ -64,6 +64,10 @@ export async function startApp() {
 
     process.stdin.on('end', () => {
         console.log('\nRESULTS:');
+        if (countSymbols) {
+            console.log(`Total Symbols (non-whitespace): ${symbolCount}`);
+            console.log(`Symbol Alphabet:`, symbolAlphabet);
+        }
         if (countWords) {
             if (remainder) {
                 const lastWords = remainder.match(/[\p{L}\p{N}]+/gu) || [];
@@ -76,11 +80,7 @@ export async function startApp() {
             console.log(`Total Words: ${words.length}`);
             console.log(`Unique Words:`, Object.keys(wordsAlphabet).length);
             console.log(`Words:`, wordsAlphabet);
-        }
-        if (countSymbols) {
-            console.log(`Total Symbols (non-whitespace): ${symbolCount}`);
-            console.log(`Symbol Alphabet:`, symbolAlphabet);
-        }
+        }        
         if (countSentences) {
             if (sentenceRemainder && sentenceRemainder.trim()) {
                 sentences.push(sentenceRemainder.trim());
